@@ -1,0 +1,8 @@
+streamlit
+pdfplumber
+spacy
+textstat
+google-generativeai
+python-dotenv
+numpy
+pandas
