@@ -1,0 +1,25 @@
+.env
+__pycache__/
+*.pyc
+*.pdf
+*.log
+.streamlit/
+# Virtual environments
+venv/
+.env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Streamlit
+.streamlit/
+
+# Node / frontend (if applicable)
+node_modules/
+dist/
+build/
+
+# OS junk
+.DS_Store
+Thumbs.db
