@@ -34,6 +34,7 @@ uploaded_file = st.file_uploader(
 # -------------------------------
 # Helper: Clarity Score Hero Card
 # -------------------------------
+<<<<<<< HEAD
 # -------------------------------
 # Helper: Clarity Score (FIXED – NO HTML)
 # -------------------------------
@@ -58,6 +59,58 @@ def render_clarity_score(clarity):
 
     if before_score is not None:
         st.caption(f"Before: {before_score} → After: {final_score}")
+=======
+def render_clarity_score(clarity):
+    final_score = clarity.get("clarity_score", 0)
+    before_score = clarity.get("initial_score")
+
+    before_after_html = ""
+    improvement_html = ""
+
+    if before_score is not None:
+        delta = final_score - before_score
+        before_after_html = f"""
+        <div style="font-size:16px;color:#cbd5f5;margin-top:12px;">
+            Before: {before_score} → After: {final_score}
+        </div>
+        """
+        if delta > 0:
+            improvement_html = f"""
+            <div style="font-size:14px;color:#22c55e;margin-top:6px;">
+                +{delta} improvement
+            </div>
+            """
+
+    st.markdown(
+        f"""
+        <div style="
+            background: linear-gradient(135deg,#020617,#0f172a);
+            padding:40px;
+            border-radius:18px;
+            margin:24px 0;
+            text-align:center;
+        ">
+            <div style="font-size:18px;color:#94a3b8;letter-spacing:2px;">
+                CLARITY SCORE
+            </div>
+
+            <div style="
+                font-size:72px;
+                font-weight:800;
+                color:#22c55e;
+                line-height:1;
+                margin-top:10px;
+            ">
+                {final_score}
+            </div>
+
+            {before_after_html}
+            {improvement_html}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+>>>>>>> 8b2bf7a6986c92aa80b463f444ef03fa34b79693
 
 # -------------------------------
 # Helper: Confusion Distribution Chart
